@@ -1,0 +1,38 @@
+<h1>{{name}}
+ - My salary is {{salary}}</h1>
+ <p>Profile: {{job}}</p>
+ <p>{{address.street}} {{address.city}}, {{address.state}}</p>
+ <button class="btn btn-primary" (click)="toggleHobbies()">{{showHobbies ? "Hide Hobbies" : "Show Hobbies"}}</button>
+ <div *ngIf="showHobbies">
+     <h3>Hobbies</h3>
+     <ul>
+      <li *ngFor="let hobby of hobbies; let i = index">
+        {{hobby}} <button (click)="deleteHobby(i)" >X</button>
+      </li>
+     </ul>
+     <form (submit)="addHobby(hobby.value)">
+        <label>Add Hobby: </label><br />
+        <input type="text" #hobby /><br />
+     </form>
+  </div>
+  <h3>Edit User</h3>
+  <form>
+      <label>Name: </label><br />
+      <input type="text" name="name" [(ngModel)] = "name"/><br />
+      <label>Job: </label><br />
+      <input type="text" name="job" [(ngModel)] = "job"/><br />
+      <label>Salary: </label><br />
+      <input type="text" name="salary" [(ngModel)] = "salary"/><br />
+      <label>Street </label><br />
+      <input type="text" name="address.street" [(ngModel)] = "address.street"/><br />
+      <label>City: </label><br />
+      <input type="text" name="address.city" [(ngModel)] = "address.city"/><br />
+      <label>State: </label><br />
+      <input type="text" name="address.state" [(ngModel)] = "address.state"/><br />
+  </form>
+  <hr>
+  <h3>Posts</h3>
+  <div *ngFor="let post of posts">
+    <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+  </div>
