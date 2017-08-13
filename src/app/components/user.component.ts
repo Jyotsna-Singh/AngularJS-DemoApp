@@ -19,10 +19,10 @@ export class UserComponent  {
  constructor(private postsService: PostsService){
 
       this.name = 'Jyotsna';
-      this.salary = '15,00,000/- 15 LPA';
+      this.salary = '100K USD';
       this.job = 'Fullstack Web Developer';
       this.address = {
-       street: '2704, FF, Sector-46',
+       street: 'FF',
        city: 'Gurugram',
        state: 'HR'
       }
